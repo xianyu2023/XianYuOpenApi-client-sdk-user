@@ -1,6 +1,7 @@
-package com.xianyu.xianyuopenapiclientsdk;
+package com.xianyu.apiClientUser;
 
-import com.xianyu.xianyuopenapiclientsdk.client.XianYuOpenApiClient;
+
+import com.xianyu.apiClientUser.client.XianYuOpenApiClientUser;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -11,10 +12,10 @@ import org.springframework.context.annotation.Configuration;
  * @author happyxianfish
  */
 @Configuration
-@ConfigurationProperties("xianyu.client")
+@ConfigurationProperties("xianyu.client.user")
 @ComponentScan
 @Data
-public class XianYuOpenApiClientConfig {
+public class XianYuOpenApiClientUserConfig {
     private String accessKey;
     private String secretKey;
 
@@ -23,7 +24,7 @@ public class XianYuOpenApiClientConfig {
      * @return
      */
     @Bean
-    public XianYuOpenApiClient getXianYuOpenApiClient() {
-        return new XianYuOpenApiClient(accessKey,secretKey);
+    public XianYuOpenApiClientUser getXianYuOpenApiClientUser() {
+        return new XianYuOpenApiClientUser(accessKey,secretKey);
     }
 }
